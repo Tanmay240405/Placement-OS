@@ -99,8 +99,8 @@ export default function OpportunityFiltersBar({
         }
         id="sort-select"
       >
-        <option value="deadline_asc">Deadline Soonest</option>
         <option value="received_desc">Newest Email</option>
+        <option value="deadline_asc">Deadline Soonest</option>
         <option value="company_asc">Company Name</option>
       </select>
     </div>

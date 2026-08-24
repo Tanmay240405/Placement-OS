@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
     const status = searchParams.get("status") || "ALL";
     const category = searchParams.get("category") || "ALL";
     const search = searchParams.get("search") || "";
-    const sort = searchParams.get("sort") || "deadline_asc";
+    const sort = searchParams.get("sort") || "received_desc";
 
     // Build where clause
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

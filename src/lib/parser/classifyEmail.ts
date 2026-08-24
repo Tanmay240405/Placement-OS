@@ -34,6 +34,18 @@ export function classifyEmail(email: ExtractedEmail): EmailClassification {
   const bodyLower = email.textBody.toLowerCase();
   const combined = `${subjectLower} ${bodyLower}`;
 
+  // Check for exclusion indicators (emails that are NOT job openings)
+  const EXCLUSION_INDICATORS = [
+    "application submitted",
+    "deadline for applications changed",
+  ];
+  
+  for (const indicator of EXCLUSION_INDICATORS) {
+    if (combined.includes(indicator)) {
+      return "OTHER_SUPERSET";
+    }
+  }
+
   // Check for job opening indicators
   for (const indicator of JOB_OPENING_INDICATORS) {
     if (combined.includes(indicator)) {

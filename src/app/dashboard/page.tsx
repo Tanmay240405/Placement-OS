@@ -18,7 +18,7 @@ export default function DashboardPage() {
     status: "ALL",
     category: "ALL",
     search: "",
-    sort: "deadline_asc",
+    sort: "received_desc",
   });
 
   const fetchOpportunities = useCallback(async () => {
