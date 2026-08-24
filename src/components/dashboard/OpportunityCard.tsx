@@ -210,7 +210,21 @@ function DeadlineDisplay({
   deadlineStatus: ReturnType<typeof getDeadlineStatus>;
   deadline: Date | string | null;
 }) {
-  if (deadlineStatus.type === "unknown") return null;
+  if (deadlineStatus.type === "unknown") {
+    return (
+      <span
+        className="badge"
+        style={{
+          background: "#ffffff",
+          color: "#737373",
+          border: "2px dashed #737373",
+          boxShadow: "none",
+        }}
+      >
+        ⏰ No deadline found
+      </span>
+    );
+  }
 
   if (deadlineStatus.type === "expired") {
     return (

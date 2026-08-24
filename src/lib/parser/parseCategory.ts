@@ -33,6 +33,8 @@ export function parseCategory(textBody: string): string | null {
  * Normalizes category strings to consistent values.
  */
 function normalizeCategory(raw: string): string {
+  // Strip any HTML tags that might have leaked through
+  raw = raw.replace(/<[^>]*>?/gm, '');
   const lower = raw.toLowerCase().trim();
 
   if (lower === "internship" || lower === "intern") {
