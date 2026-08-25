@@ -1,0 +1,1099 @@
+1. DBMS
+1.1 Database Fundamentals
+What is a DBMS?
+DBMS vs File System
+Advantages of DBMS
+Disadvantages of DBMS
+Database architecture
+Database users
+DBA and responsibilities
+Data abstraction
+Physical level
+Logical level
+View level
+Schema
+Instance
+Data independence
+Physical data independence
+Logical data independence
+Three-schema architecture
+1.2 ER Model
+Entity
+Entity set
+Attributes
+Types of attributes
+Simple attribute
+Composite attribute
+Single-valued attribute
+Multi-valued attribute
+Derived attribute
+Relationship
+Relationship set
+Degree of relationship
+Cardinality
+One-to-one
+One-to-many
+Many-to-one
+Many-to-many
+Participation constraints
+Total participation
+Partial participation
+Weak entity
+Strong entity
+Identifying relationship
+ER diagram
+Converting ER model to relational model
+1.3 Keys
+
+Very commonly asked.
+
+Super key
+Candidate key
+Primary key
+Alternate key
+Foreign key
+Composite key
+Natural key
+Surrogate key
+Unique key
+Difference between primary key and unique key
+Difference between primary key and foreign key
+Can a primary key be NULL?
+Can a foreign key be NULL?
+Referential integrity
+1.4 Relational Model
+Relation
+Tuple
+Attribute
+Domain
+Degree
+Cardinality
+Relation schema
+Relation instance
+Integrity constraints
+Domain constraints
+Entity integrity
+Referential integrity
+1.5 Relational Algebra
+
+Important for fundamentals.
+
+Selection
+Projection
+Union
+Intersection
+Set difference
+Cartesian product
+Rename
+Join
+Theta join
+Equi join
+Natural join
+Division
+1.6 Functional Dependencies
+
+Very important for normalization.
+
+Functional dependency
+Trivial functional dependency
+Non-trivial dependency
+Full functional dependency
+Partial dependency
+Transitive dependency
+Closure of attributes
+Closure of functional dependencies
+Armstrong's axioms
+Reflexivity
+Augmentation
+Transitivity
+1.7 Normalization
+
+One of the most important DBMS interview topics.
+
+Why normalization?
+Redundancy
+Update anomaly
+Insert anomaly
+Delete anomaly
+Normal Forms
+First Normal Form (1NF)
+Second Normal Form (2NF)
+Third Normal Form (3NF)
+BCNF
+Fourth Normal Form (4NF)
+Fifth Normal Form (5NF)
+
+Also include:
+
+Partial dependency
+Transitive dependency
+Multivalued dependency
+Join dependency
+Lossless decomposition
+Lossy decomposition
+Dependency preservation
+Denormalization
+When should you denormalize?
+1.8 Transactions
+
+Extremely important.
+
+What is a transaction?
+Transaction states
+Active
+Partially committed
+Committed
+Failed
+Aborted
+ACID Properties
+Atomicity
+Consistency
+Isolation
+Durability
+
+For each, you should be able to explain a real-world example.
+
+1.9 Concurrency Control
+Concurrent transactions
+Problems with concurrent execution
+Lost update
+Dirty read
+Non-repeatable read
+Phantom read
+Schedules
+Serial schedule
+Non-serial schedule
+Serializable schedule
+Conflict serializability
+View serializability
+Locking
+Shared lock
+Exclusive lock
+Two-phase locking
+Strict two-phase locking
+Lock compatibility
+Lock granularity
+Intention locks
+1.10 Deadlocks
+What is deadlock?
+Conditions for deadlock
+Deadlock prevention
+Deadlock avoidance
+Deadlock detection
+Deadlock recovery
+Wait-for graph
+1.11 Recovery
+Failure types
+Log-based recovery
+Write-ahead logging
+Undo
+Redo
+Checkpointing
+Shadow paging
+Crash recovery
+1.12 Indexing
+
+Very commonly asked.
+
+What is an index?
+Why indexing improves performance
+Cost of indexing
+Primary index
+Secondary index
+Clustered index
+Non-clustered index
+Dense index
+Sparse index
+Composite index
+Covering index
+B-Tree
+B+ Tree
+Hash indexing
+When indexes help
+When indexes hurt
+Index scan vs full table scan
+1.13 Database Architecture
+Centralized database
+Distributed database
+Client-server architecture
+Two-tier architecture
+Three-tier architecture
+Database replication
+Sharding
+Partitioning
+1.14 Views
+What is a view?
+Why use views?
+Materialized views
+Normal views vs materialized views
+Updatable views
+1.15 DBMS Interview Must-Knows
+
+Make this a special section:
+
+DBMS vs RDBMS
+DELETE vs TRUNCATE vs DROP
+Primary key vs unique key
+WHERE vs HAVING
+Clustered vs non-clustered index
+Normalization vs denormalization
+SQL vs NoSQL
+ACID properties
+Deadlock
+Indexing
+Transactions
+Joins
+2. SQL
+
+I would separate SQL from DBMS because SQL questions are frequently practical/coding-based.
+
+2.1 SQL Basics
+What is SQL?
+DDL
+DML
+DCL
+TCL
+SELECT
+INSERT
+UPDATE
+DELETE
+2.2 Database Operations
+CREATE DATABASE
+DROP DATABASE
+USE DATABASE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+TRUNCATE TABLE
+2.3 Constraints
+PRIMARY KEY
+FOREIGN KEY
+UNIQUE
+NOT NULL
+CHECK
+DEFAULT
+2.4 SELECT Queries
+SELECT
+DISTINCT
+WHERE
+ORDER BY
+LIMIT
+OFFSET
+Aliases
+2.5 Filtering
+AND
+OR
+NOT
+IN
+NOT IN
+BETWEEN
+LIKE
+Wildcards
+%
+_
+IS NULL
+IS NOT NULL
+2.6 Aggregate Functions
+COUNT
+SUM
+AVG
+MIN
+MAX
+2.7 GROUP BY and HAVING
+
+Very important.
+
+GROUP BY
+HAVING
+WHERE vs HAVING
+Aggregate queries
+Grouping multiple columns
+2.8 Joins
+
+Extremely important.
+
+INNER JOIN
+LEFT JOIN
+RIGHT JOIN
+FULL OUTER JOIN
+CROSS JOIN
+SELF JOIN
+NATURAL JOIN
+
+Practice understanding visually:
+
+Table A + Table B
+
+You should know exactly what rows each join returns.
+
+2.9 Subqueries
+Simple subqueries
+Nested subqueries
+Correlated subqueries
+EXISTS
+NOT EXISTS
+IN vs EXISTS
+ANY
+ALL
+2.10 Set Operations
+UNION
+UNION ALL
+INTERSECT
+EXCEPT / MINUS
+
+Important:
+
+UNION vs UNION ALL
+2.11 SQL Functions
+String Functions
+CONCAT
+LENGTH
+LOWER
+UPPER
+SUBSTRING
+TRIM
+REPLACE
+Date Functions
+CURRENT_DATE
+NOW
+DATE functions
+Numeric Functions
+ROUND
+CEIL
+FLOOR
+2.12 CASE Statements
+CASE
+Conditional logic in SQL
+CASE with aggregation
+2.13 Window Functions
+
+Very important for modern SQL interviews.
+
+OVER()
+PARTITION BY
+ORDER BY inside window functions
+ROW_NUMBER()
+RANK()
+DENSE_RANK()
+NTILE()
+LAG()
+LEAD()
+Running totals
+2.14 CTE
+Common Table Expressions
+WITH clause
+Multiple CTEs
+Recursive CTE
+2.15 Transactions in SQL
+BEGIN
+COMMIT
+ROLLBACK
+SAVEPOINT
+2.16 SQL Performance
+Query optimization
+Indexes
+EXPLAIN / query plan concept
+Avoiding unnecessary SELECT *
+Index usage
+N+1 query problem
+Join performance
+2.17 SQL Practice Patterns
+
+Make these actual revision topics too:
+
+Second highest salary
+Nth highest salary
+Duplicate records
+Delete duplicates
+Find employees without managers
+Employees earning more than managers
+Top N per department
+Consecutive values
+Running total
+Ranking
+Department-wise highest salary
+Customers with no orders
+JOIN-based problems
+GROUP BY problems
+Window function problems
+3. COMPUTER NETWORKS
+3.1 Network Fundamentals
+What is a computer network?
+Types of networks
+LAN
+MAN
+WAN
+PAN
+Network topology
+Bus
+Star
+Ring
+Mesh
+Bandwidth
+Throughput
+Latency
+Jitter
+Packet loss
+3.2 OSI Model
+
+Very important.
+
+Learn every layer properly.
+
+Physical Layer
+Bits
+Transmission media
+Signals
+Data Link Layer
+Frames
+MAC address
+Error detection
+Flow control
+Switches
+Network Layer
+IP addressing
+Routing
+Routers
+Transport Layer
+TCP
+UDP
+Ports
+Reliability
+Session Layer
+Session management
+Presentation Layer
+Encryption
+Compression
+Data translation
+Application Layer
+HTTP
+DNS
+SMTP
+FTP
+
+Also:
+
+Data encapsulation
+Decapsulation
+Data units at every layer
+3.3 TCP/IP Model
+Application
+Transport
+Internet
+Network Access
+
+Also:
+
+OSI vs TCP/IP
+3.4 IP Addressing
+IPv4
+IPv6
+Public IP
+Private IP
+Static IP
+Dynamic IP
+Loopback address
+APIPA
+Subnet mask
+CIDR
+Subnetting
+Network address
+Broadcast address
+3.5 MAC Address
+What is a MAC address?
+MAC vs IP address
+ARP
+ARP request
+ARP response
+ARP table
+3.6 DNS
+
+Extremely commonly asked.
+
+What is DNS?
+Domain name resolution
+Recursive query
+Iterative query
+DNS resolver
+Root server
+TLD server
+Authoritative name server
+DNS caching
+TTL
+
+You should be able to explain:
+
+What happens when you type google.com into your browser?
+
+3.7 TCP
+
+Extremely important.
+
+Connection-oriented protocol
+Reliability
+Sequence number
+Acknowledgment
+Flow control
+Congestion control
+TCP Three-Way Handshake
+SYN
+SYN-ACK
+ACK
+TCP Connection Termination
+FIN
+ACK
+
+Also:
+
+Why 3-way handshake?
+Why not 2-way?
+TIME_WAIT
+TCP flow control
+Sliding window
+TCP congestion control
+3.8 UDP
+Connectionless
+No guarantee of delivery
+Speed
+Use cases
+TCP vs UDP
+
+Very frequently asked.
+
+3.9 HTTP and HTTPS
+HTTP
+HTTPS
+SSL
+TLS
+HTTP request
+HTTP response
+HTTP methods
+GET
+POST
+PUT
+PATCH
+DELETE
+HTTP status codes
+200
+201
+400
+401
+403
+404
+500
+HTTP vs HTTPS
+HTTP/1.1 vs HTTP/2 basics
+3.10 Routing
+Routing
+Router
+Routing table
+Static routing
+Dynamic routing
+Distance vector
+Link state
+RIP
+OSPF
+BGP basics
+3.11 Switching
+Switch
+Hub
+Router
+Bridge
+Gateway
+
+Very important comparison section.
+
+3.12 DHCP
+What is DHCP?
+Dynamic IP allocation
+DORA process
+Discover
+Offer
+Request
+Acknowledge
+3.13 NAT
+What is NAT?
+Why NAT?
+Private IP to public IP
+PAT
+3.14 Network Security
+Firewall
+Proxy
+VPN
+SSL/TLS
+HTTPS
+Public key
+Private key
+Symmetric encryption
+Asymmetric encryption
+4. OPERATING SYSTEMS
+4.1 OS Fundamentals
+What is an operating system?
+Responsibilities of OS
+Kernel
+Shell
+User mode
+Kernel mode
+System calls
+4.2 Types of Operating Systems
+Batch OS
+Multiprogramming
+Multitasking
+Time-sharing
+Distributed OS
+Real-time OS
+Network OS
+4.3 Processes
+
+Extremely important.
+
+Program vs process
+Process states
+New
+Ready
+Running
+Waiting
+Terminated
+Process Control Block
+Context switching
+Process scheduling
+4.4 Threads
+What is a thread?
+Process vs thread
+User-level threads
+Kernel-level threads
+Multithreading
+Benefits of threads
+4.5 CPU Scheduling
+
+Very important.
+
+FCFS
+SJF
+SRTF
+Round Robin
+Priority Scheduling
+Multilevel Queue
+Multilevel Feedback Queue
+
+Concepts:
+
+Arrival time
+Burst time
+Completion time
+Turnaround time
+Waiting time
+Response time
+
+Also:
+
+Preemptive vs non-preemptive
+Starvation
+Aging
+Context switching
+4.6 Process Synchronization
+
+One of the biggest interview topics.
+
+Race condition
+Critical section
+Mutual exclusion
+Synchronization
+Synchronization Tools
+Mutex
+Semaphore
+Binary semaphore
+Counting semaphore
+Monitor
+Spinlock
+Classic Problems
+Producer-consumer
+Readers-writers
+Dining philosophers
+4.7 Deadlocks
+Deadlock
+Coffman conditions
+Mutual exclusion
+Hold and wait
+No preemption
+Circular wait
+Prevention
+Avoidance
+Detection
+Recovery
+Banker's algorithm
+Resource allocation graph
+4.8 Memory Management
+
+Very important.
+
+Logical address
+Physical address
+Address binding
+Dynamic loading
+Dynamic linking
+Swapping
+Contiguous allocation
+4.9 Paging
+Page
+Frame
+Page table
+Address translation
+TLB
+Multi-level page table
+Inverted page table
+
+Important:
+
+Why paging?
+Internal fragmentation
+4.10 Segmentation
+Segment
+Segment table
+Logical division
+External fragmentation
+Paging vs Segmentation
+
+Must know.
+
+4.11 Virtual Memory
+Virtual memory
+Demand paging
+Page fault
+Thrashing
+4.12 Page Replacement
+FIFO
+Optimal
+LRU
+Clock / Second chance
+
+Also:
+
+Belady's anomaly
+4.13 Fragmentation
+Internal fragmentation
+External fragmentation
+Compaction
+4.14 File Systems
+File
+Directory
+File allocation
+Allocation methods
+Contiguous allocation
+Linked allocation
+Indexed allocation
+
+Also:
+
+File permissions
+Inode basics
+4.15 Disk Scheduling
+FCFS
+SSTF
+SCAN
+C-SCAN
+LOOK
+C-LOOK
+4.16 OS Architecture
+Monolithic kernel
+Microkernel
+Hybrid kernel
+5. OOPS
+5.1 Fundamentals
+What is OOP?
+Why OOP?
+Class
+Object
+Attributes
+Methods
+5.2 Four Pillars
+Encapsulation
+Data hiding
+Access modifiers
+Getters and setters
+Abstraction
+Abstract classes
+Interfaces
+Implementation hiding
+Inheritance
+Parent class
+Child class
+Types of inheritance
+Polymorphism
+Compile-time polymorphism
+Runtime polymorphism
+Method overloading
+Method overriding
+5.3 Class Relationships
+Association
+Aggregation
+Composition
+Dependency
+
+Especially:
+
+Aggregation vs Composition.
+
+5.4 Constructors
+Default constructor
+Parameterized constructor
+Copy constructor
+Constructor overloading
+5.5 Destructor
+Destructor concept
+Object lifecycle
+5.6 Access Modifiers
+Public
+Private
+Protected
+Default/package-private where applicable
+5.7 Static
+Static variable
+Static method
+Static block
+Static class concepts
+5.8 Important Keywords
+
+Depending on your primary language, include:
+
+this
+super
+final
+const
+static
+virtual
+override
+5.9 Interfaces vs Abstract Classes
+
+Very common.
+
+Interface
+Abstract class
+When to use each
+Multiple inheritance through interfaces
+5.10 Overloading vs Overriding
+
+Must know clearly.
+
+5.11 Object Relationships
+IS-A relationship
+HAS-A relationship
+5.12 SOLID Principles
+
+Important for interviews and design.
+
+Single Responsibility Principle
+Open/Closed Principle
+Liskov Substitution Principle
+Interface Segregation Principle
+Dependency Inversion Principle
+5.13 Object-Oriented Design Concepts
+Coupling
+Cohesion
+Loose coupling
+High cohesion
+Dependency injection
+5.14 Design Patterns Basics
+
+For fresher placements, don't go insanely deep, but know:
+
+Creational
+Singleton
+Factory
+Builder
+Structural
+Adapter
+Decorator
+Behavioral
+Observer
+Strategy
+6. SYSTEM ARCHITECTURE AND DESIGN
+
+I would divide this into:
+
+System Design Fundamentals
+Low-Level Design
+
+6.1 System Design Fundamentals
+What is system design?
+Functional requirements
+Non-functional requirements
+Scalability
+Availability
+Reliability
+Maintainability
+Performance
+Latency
+Throughput
+6.2 Client-Server Architecture
+Client
+Server
+API
+Request-response architecture
+Stateless vs stateful services
+6.3 Load Balancing
+What is a load balancer?
+Why load balancing?
+Horizontal scaling
+Vertical scaling
+Round robin
+Least connections
+Health checks
+6.4 Scaling
+Vertical scaling
+Horizontal scaling
+Stateless architecture
+Stateful architecture
+Auto scaling
+6.5 Caching
+
+Very important.
+
+Why caching?
+Cache hit
+Cache miss
+Cache-aside
+Write-through
+Write-back
+TTL
+Cache invalidation
+Redis basics
+CDN caching
+6.6 Databases
+SQL vs NoSQL
+Relational database
+Document database
+Key-value database
+Graph database
+
+Also:
+
+Primary database
+Read replicas
+Replication
+Sharding
+Partitioning
+6.7 Database Scaling
+Vertical scaling
+Read replicas
+Sharding
+Horizontal partitioning
+Vertical partitioning
+6.8 CAP Theorem
+Consistency
+Availability
+Partition tolerance
+
+Also understand:
+
+Eventual consistency
+Strong consistency
+6.9 API Design
+REST
+RESTful APIs
+HTTP methods
+Idempotency
+Pagination
+Versioning
+Rate limiting
+Authentication
+Authorization
+6.10 Authentication and Authorization
+Authentication vs authorization
+Sessions
+Cookies
+JWT
+Access token
+Refresh token
+OAuth basics
+6.11 Message Queues
+
+Very important modern concept.
+
+Why message queues?
+Asynchronous processing
+Producer
+Consumer
+Queue
+Pub/Sub
+
+Examples conceptually:
+
+RabbitMQ
+Kafka
+
+Also:
+
+Message ordering
+Delivery guarantees
+Idempotency
+6.12 CDN
+What is CDN?
+Edge servers
+Static content delivery
+Latency reduction
+6.13 Rate Limiting
+Why rate limiting?
+Fixed window
+Sliding window
+Token bucket
+Leaky bucket
+6.14 Monitoring
+Logging
+Metrics
+Tracing
+Observability
+Alerts
+Health checks
+6.15 System Design Concepts
+Single point of failure
+Redundancy
+Fault tolerance
+High availability
+Disaster recovery
+Backups
+6.16 Common System Design Problems
+
+These can become revision topics later:
+
+URL Shortener
+Chat application
+WhatsApp
+Instagram
+Twitter/X feed
+YouTube
+Netflix
+Uber
+Google Drive
+Notification system
+Rate limiter
+Web crawler
+File storage system
+
+For each design, your revision checklist could be:
+
+Requirements
+APIs
+Database
+High-level architecture
+Scaling
+Caching
+Load balancing
+Bottlenecks
+6.17 Low-Level Design
+Classes
+Objects
+Interfaces
+Relationships
+UML basics
+Class diagrams
+Sequence diagrams
+Common LLD problems
+Parking Lot
+Elevator
+Library Management System
+Splitwise
+Tic Tac Toe
+Snake and Ladder
+Vending Machine
+ATM
