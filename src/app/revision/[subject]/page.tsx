@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import TopicCard from "@/components/revision/TopicCard";
+import SelfEvaluationModal from "@/components/revision/SelfEvaluationModal";
 import topicsData from "@/data/topics.json";
 
 export default function SubjectPage({ params }: { params: Promise<{ subject: string }> }) {
@@ -16,6 +17,12 @@ export default function SubjectPage({ params }: { params: Promise<{ subject: str
 
   const [completedTopics, setCompletedTopics] = useState<Record<string, boolean>>({});
   const [isMounted, setIsMounted] = useState(false);
+
+  // Modal State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeTopicId, setActiveTopicId] = useState<string | null>(null);
+  const [activeTopicTitle, setActiveTopicTitle] = useState("");
+  const [randomSubtopics, setRandomSubtopics] = useState<string[]>([]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -34,10 +41,26 @@ export default function SubjectPage({ params }: { params: Promise<{ subject: str
     return notFound();
   }
 
-  const handleMarkComplete = (topicId: string) => {
-    const updated = { ...completedTopics, [topicId]: true };
+  const handleOpenModal = (topicId: string, subtopics: string[]) => {
+    const topic = subjectData.topics.find((t: any) => t.id === topicId);
+    if (!topic) return;
+
+    setActiveTopicId(topicId);
+    setActiveTopicTitle(`${topic.id} ${topic.title}`);
+    
+    const numToPick = Math.min(subtopics.length, Math.floor(Math.random() * 2) + 2);
+    const shuffled = [...subtopics].sort(() => 0.5 - Math.random());
+    setRandomSubtopics(shuffled.slice(0, numToPick));
+    
+    setIsModalOpen(true);
+  };
+
+  const handleMarkComplete = () => {
+    if (!activeTopicId) return;
+    const updated = { ...completedTopics, [activeTopicId]: true };
     setCompletedTopics(updated);
     localStorage.setItem(`completed_${subjectId}`, JSON.stringify(updated));
+    setIsModalOpen(false);
   };
 
   const completedCount = Object.keys(completedTopics).length;
@@ -102,11 +125,19 @@ export default function SubjectPage({ params }: { params: Promise<{ subject: str
               title={`${topic.id} ${topic.title}`}
               subtopics={topic.subtopics}
               isCompleted={!!completedTopics[topic.id]}
-              onMarkComplete={handleMarkComplete}
+              onOpenModal={handleOpenModal}
             />
           ))}
         </div>
       </main>
+
+      <SelfEvaluationModal
+        topicTitle={activeTopicTitle}
+        subtopics={randomSubtopics}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onComplete={handleMarkComplete}
+      />
     </div>
   );
 }

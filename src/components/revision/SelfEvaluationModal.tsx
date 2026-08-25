@@ -25,7 +25,10 @@ export default function SelfEvaluationModal({
     <div
       style={{
         position: "fixed",
-        inset: 0,
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         backdropFilter: "blur(4px)",
         display: "flex",
@@ -41,6 +44,8 @@ export default function SelfEvaluationModal({
         style={{
           width: "100%",
           maxWidth: "600px",
+          maxHeight: "90vh",
+          overflowY: "auto",
           backgroundColor: "var(--bg-card)",
           padding: "2rem",
           display: "flex",
