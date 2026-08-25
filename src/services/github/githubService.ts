@@ -85,7 +85,9 @@ export async function getGithubData() {
 
 export async function fetchGithubRecentActivity() {
   if (!GITHUB_PAT) return [];
-  const res = await fetch(`https://api.github.com/users/${USERNAME}/events/public?per_page=30`, {
+  
+  // Use authenticated endpoint (not /public) to include private repo activity
+  const res = await fetch(`https://api.github.com/users/${USERNAME}/events?per_page=50`, {
     headers: {
       "Authorization": `token ${GITHUB_PAT}`,
       "Accept": "application/vnd.github.v3+json"
@@ -96,39 +98,96 @@ export async function fetchGithubRecentActivity() {
   if (!res.ok) return [];
   const events = await res.json();
   
+  const allowedTypes = ["PushEvent", "CreateEvent", "PullRequestEvent", "PullRequestReviewEvent", "IssuesEvent", "WatchEvent", "ForkEvent"];
   const groupedEvents: Record<string, any[]> = {};
   
   events.forEach((event: any) => {
-    if (event.type !== "PushEvent" && event.type !== "CreateEvent") return;
+    if (!allowedTypes.includes(event.type)) return;
     
     const date = new Date(event.created_at);
-    const today = new Date();
-    const isToday = date.toDateString() === today.toDateString();
-    const isYesterday = new Date(today.setDate(today.getDate() - 1)).toDateString() === date.toDateString();
+    const now = new Date();
+    const diffDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 3600 * 24));
     
     let dateGroup = "Older";
-    if (isToday) dateGroup = "Today";
-    else if (isYesterday) dateGroup = "Yesterday";
-    else dateGroup = `${Math.floor((new Date().getTime() - date.getTime()) / (1000 * 3600 * 24))} Days Ago`;
+    if (diffDays === 0) dateGroup = "Today";
+    else if (diffDays === 1) dateGroup = "Yesterday";
+    else if (diffDays <= 7) dateGroup = `${diffDays} Days Ago`;
+    else dateGroup = `${Math.floor(diffDays / 7)} Weeks Ago`;
 
     if (!groupedEvents[dateGroup]) groupedEvents[dateGroup] = [];
     
+    const repoName = event.repo.name.split('/')[1];
     let description = "";
     let icon = "🚀";
-    if (event.type === "PushEvent") {
-      const commits = event.payload.commits?.length || 0;
-      description = `Pushed ${commits} commit${commits !== 1 ? 's' : ''} to ${event.repo.name.split('/')[1]}`;
-      icon = "🔥";
-    } else if (event.type === "CreateEvent") {
-      description = `Created repository ${event.repo.name.split('/')[1]}`;
-      icon = "📦";
+    
+    switch (event.type) {
+      case "PushEvent": {
+        const commits = event.payload.size || event.payload.commits?.length || 0;
+        description = commits > 0
+          ? `Pushed ${commits} commit${commits !== 1 ? 's' : ''} to ${repoName}`
+          : `Pushed updates to ${repoName}`;
+        icon = "🔥";
+        break;
+      }
+      case "CreateEvent": {
+        const refType = event.payload.ref_type;
+        if (refType === "repository") {
+          description = `Created repository ${repoName}`;
+          icon = "📦";
+        } else if (refType === "branch") {
+          description = `Created branch ${event.payload.ref} in ${repoName}`;
+          icon = "🌿";
+        } else {
+          description = `Created ${refType} in ${repoName}`;
+          icon = "✨";
+        }
+        break;
+      }
+      case "PullRequestEvent": {
+        const action = event.payload.action;
+        const prTitle = event.payload.pull_request?.title || "";
+        const merged = event.payload.pull_request?.merged;
+        if (merged && action === "closed") {
+          description = `Merged PR "${prTitle}" in ${repoName}`;
+          icon = "🟣";
+        } else if (action === "opened") {
+          description = `Opened PR "${prTitle}" in ${repoName}`;
+          icon = "🟢";
+        } else if (action === "closed") {
+          description = `Closed PR "${prTitle}" in ${repoName}`;
+          icon = "🔴";
+        } else {
+          description = `${action} PR "${prTitle}" in ${repoName}`;
+          icon = "🔀";
+        }
+        break;
+      }
+      case "PullRequestReviewEvent": {
+        const prTitle = event.payload.pull_request?.title || "";
+        description = `Reviewed PR "${prTitle}" in ${repoName}`;
+        icon = "👀";
+        break;
+      }
+      case "IssuesEvent": {
+        const issueTitle = event.payload.issue?.title || "";
+        description = `${event.payload.action} issue "${issueTitle}" in ${repoName}`;
+        icon = "📝";
+        break;
+      }
+      case "ForkEvent": {
+        description = `Forked ${repoName}`;
+        icon = "🍴";
+        break;
+      }
+      default:
+        description = `Activity in ${repoName}`;
     }
 
-    if (groupedEvents[dateGroup].length < 5) {
+    if (groupedEvents[dateGroup].length < 6) {
       groupedEvents[dateGroup].push({
         id: event.id,
         description,
-        repo: event.repo.name.split('/')[1],
+        repo: repoName,
         time: dateGroup,
         icon
       });
@@ -139,7 +198,7 @@ export async function fetchGithubRecentActivity() {
     id: i.toString(),
     dateGroup: key,
     events: groupedEvents[key]
-  })).slice(0, 3);
+  })).slice(0, 5);
 }
 
 export function processGithubData(userData: any) {
