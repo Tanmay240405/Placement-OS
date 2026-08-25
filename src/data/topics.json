@@ -1,0 +1,1439 @@
+{
+  "dbms": {
+    "title": "DBMS",
+    "topics": [
+      {
+        "id": "1.1",
+        "title": "Database Fundamentals",
+        "subtopics": [
+          "What is a DBMS?",
+          "DBMS vs File System",
+          "Advantages of DBMS",
+          "Disadvantages of DBMS",
+          "Database architecture",
+          "Database users",
+          "DBA and responsibilities",
+          "Data abstraction",
+          "Physical level",
+          "Logical level",
+          "View level",
+          "Schema",
+          "Instance",
+          "Data independence",
+          "Physical data independence",
+          "Logical data independence",
+          "Three-schema architecture"
+        ]
+      },
+      {
+        "id": "1.2",
+        "title": "ER Model",
+        "subtopics": [
+          "Entity",
+          "Entity set",
+          "Attributes",
+          "Types of attributes",
+          "Simple attribute",
+          "Composite attribute",
+          "Single-valued attribute",
+          "Multi-valued attribute",
+          "Derived attribute",
+          "Relationship",
+          "Relationship set",
+          "Degree of relationship",
+          "Cardinality",
+          "One-to-one",
+          "One-to-many",
+          "Many-to-one",
+          "Many-to-many",
+          "Participation constraints",
+          "Total participation",
+          "Partial participation",
+          "Weak entity",
+          "Strong entity",
+          "Identifying relationship",
+          "ER diagram",
+          "Converting ER model to relational model"
+        ]
+      },
+      {
+        "id": "1.3",
+        "title": "Keys",
+        "subtopics": [
+          "Super key",
+          "Candidate key",
+          "Primary key",
+          "Alternate key",
+          "Foreign key",
+          "Composite key",
+          "Natural key",
+          "Surrogate key",
+          "Unique key",
+          "Difference between primary key and unique key",
+          "Difference between primary key and foreign key",
+          "Can a primary key be NULL?",
+          "Can a foreign key be NULL?",
+          "Referential integrity"
+        ]
+      },
+      {
+        "id": "1.4",
+        "title": "Relational Model",
+        "subtopics": [
+          "Relation",
+          "Tuple",
+          "Attribute",
+          "Domain",
+          "Degree",
+          "Cardinality",
+          "Relation schema",
+          "Relation instance",
+          "Integrity constraints",
+          "Domain constraints",
+          "Entity integrity",
+          "Referential integrity"
+        ]
+      },
+      {
+        "id": "1.5",
+        "title": "Relational Algebra",
+        "subtopics": [
+          "Selection",
+          "Projection",
+          "Union",
+          "Intersection",
+          "Set difference",
+          "Cartesian product",
+          "Rename",
+          "Join",
+          "Theta join",
+          "Equi join",
+          "Natural join",
+          "Division"
+        ]
+      },
+      {
+        "id": "1.6",
+        "title": "Functional Dependencies",
+        "subtopics": [
+          "Functional dependency",
+          "Trivial functional dependency",
+          "Non-trivial dependency",
+          "Full functional dependency",
+          "Partial dependency",
+          "Transitive dependency",
+          "Closure of attributes",
+          "Closure of functional dependencies",
+          "Armstrong's axioms",
+          "Reflexivity",
+          "Augmentation",
+          "Transitivity"
+        ]
+      },
+      {
+        "id": "1.7",
+        "title": "Normalization",
+        "subtopics": [
+          "One of the most important DBMS interview topics.",
+          "Why normalization?",
+          "Redundancy",
+          "Update anomaly",
+          "Insert anomaly",
+          "Delete anomaly",
+          "Normal Forms",
+          "First Normal Form (1NF)",
+          "Second Normal Form (2NF)",
+          "Third Normal Form (3NF)",
+          "BCNF",
+          "Fourth Normal Form (4NF)",
+          "Fifth Normal Form (5NF)",
+          "Partial dependency",
+          "Transitive dependency",
+          "Multivalued dependency",
+          "Join dependency",
+          "Lossless decomposition",
+          "Lossy decomposition",
+          "Dependency preservation",
+          "Denormalization",
+          "When should you denormalize?"
+        ]
+      },
+      {
+        "id": "1.8",
+        "title": "Transactions",
+        "subtopics": [
+          "What is a transaction?",
+          "Transaction states",
+          "Active",
+          "Partially committed",
+          "Committed",
+          "Failed",
+          "Aborted",
+          "ACID Properties",
+          "Atomicity",
+          "Consistency",
+          "Isolation",
+          "Durability"
+        ]
+      },
+      {
+        "id": "1.9",
+        "title": "Concurrency Control",
+        "subtopics": [
+          "Concurrent transactions",
+          "Problems with concurrent execution",
+          "Lost update",
+          "Dirty read",
+          "Non-repeatable read",
+          "Phantom read",
+          "Schedules",
+          "Serial schedule",
+          "Non-serial schedule",
+          "Serializable schedule",
+          "Conflict serializability",
+          "View serializability",
+          "Locking",
+          "Shared lock",
+          "Exclusive lock",
+          "Two-phase locking",
+          "Strict two-phase locking",
+          "Lock compatibility",
+          "Lock granularity",
+          "Intention locks"
+        ]
+      },
+      {
+        "id": "1.10",
+        "title": "Deadlocks",
+        "subtopics": [
+          "What is deadlock?",
+          "Conditions for deadlock",
+          "Deadlock prevention",
+          "Deadlock avoidance",
+          "Deadlock detection",
+          "Deadlock recovery",
+          "Wait-for graph"
+        ]
+      },
+      {
+        "id": "1.11",
+        "title": "Recovery",
+        "subtopics": [
+          "Failure types",
+          "Log-based recovery",
+          "Write-ahead logging",
+          "Undo",
+          "Redo",
+          "Checkpointing",
+          "Shadow paging",
+          "Crash recovery"
+        ]
+      },
+      {
+        "id": "1.12",
+        "title": "Indexing",
+        "subtopics": [
+          "What is an index?",
+          "Why indexing improves performance",
+          "Cost of indexing",
+          "Primary index",
+          "Secondary index",
+          "Clustered index",
+          "Non-clustered index",
+          "Dense index",
+          "Sparse index",
+          "Composite index",
+          "Covering index",
+          "B-Tree",
+          "B+ Tree",
+          "Hash indexing",
+          "When indexes help",
+          "When indexes hurt",
+          "Index scan vs full table scan"
+        ]
+      },
+      {
+        "id": "1.13",
+        "title": "Database Architecture",
+        "subtopics": [
+          "Centralized database",
+          "Distributed database",
+          "Client-server architecture",
+          "Two-tier architecture",
+          "Three-tier architecture",
+          "Database replication",
+          "Sharding",
+          "Partitioning"
+        ]
+      },
+      {
+        "id": "1.14",
+        "title": "Views",
+        "subtopics": [
+          "What is a view?",
+          "Why use views?",
+          "Materialized views",
+          "Normal views vs materialized views",
+          "Updatable views"
+        ]
+      },
+      {
+        "id": "1.15",
+        "title": "DBMS Interview Must-Knows",
+        "subtopics": [
+          "DBMS vs RDBMS",
+          "DELETE vs TRUNCATE vs DROP",
+          "Primary key vs unique key",
+          "WHERE vs HAVING",
+          "Clustered vs non-clustered index",
+          "Normalization vs denormalization",
+          "SQL vs NoSQL",
+          "ACID properties",
+          "Deadlock",
+          "Indexing",
+          "Transactions",
+          "Joins"
+        ]
+      }
+    ]
+  },
+  "sql": {
+    "title": "SQL",
+    "topics": [
+      {
+        "id": "2.1",
+        "title": "SQL Basics",
+        "subtopics": [
+          "What is SQL?",
+          "DDL",
+          "DML",
+          "DCL",
+          "TCL",
+          "SELECT",
+          "INSERT",
+          "UPDATE",
+          "DELETE"
+        ]
+      },
+      {
+        "id": "2.2",
+        "title": "Database Operations",
+        "subtopics": [
+          "CREATE DATABASE",
+          "DROP DATABASE",
+          "USE DATABASE",
+          "CREATE TABLE",
+          "ALTER TABLE",
+          "DROP TABLE",
+          "TRUNCATE TABLE"
+        ]
+      },
+      {
+        "id": "2.3",
+        "title": "Constraints",
+        "subtopics": [
+          "PRIMARY KEY",
+          "FOREIGN KEY",
+          "UNIQUE",
+          "NOT NULL",
+          "CHECK",
+          "DEFAULT"
+        ]
+      },
+      {
+        "id": "2.4",
+        "title": "SELECT Queries",
+        "subtopics": [
+          "SELECT",
+          "DISTINCT",
+          "WHERE",
+          "ORDER BY",
+          "LIMIT",
+          "OFFSET",
+          "Aliases"
+        ]
+      },
+      {
+        "id": "2.5",
+        "title": "Filtering",
+        "subtopics": [
+          "AND",
+          "OR",
+          "NOT",
+          "IN",
+          "NOT IN",
+          "BETWEEN",
+          "LIKE",
+          "Wildcards",
+          "%",
+          "_",
+          "IS NULL",
+          "IS NOT NULL"
+        ]
+      },
+      {
+        "id": "2.6",
+        "title": "Aggregate Functions",
+        "subtopics": [
+          "COUNT",
+          "SUM",
+          "AVG",
+          "MIN",
+          "MAX"
+        ]
+      },
+      {
+        "id": "2.7",
+        "title": "GROUP BY and HAVING",
+        "subtopics": [
+          "GROUP BY",
+          "HAVING",
+          "WHERE vs HAVING",
+          "Aggregate queries",
+          "Grouping multiple columns"
+        ]
+      },
+      {
+        "id": "2.8",
+        "title": "Joins",
+        "subtopics": [
+          "INNER JOIN",
+          "LEFT JOIN",
+          "RIGHT JOIN",
+          "FULL OUTER JOIN",
+          "CROSS JOIN",
+          "SELF JOIN",
+          "NATURAL JOIN",
+          "Table A + Table B"
+        ]
+      },
+      {
+        "id": "2.9",
+        "title": "Subqueries",
+        "subtopics": [
+          "Simple subqueries",
+          "Nested subqueries",
+          "Correlated subqueries",
+          "EXISTS",
+          "NOT EXISTS",
+          "IN vs EXISTS",
+          "ANY",
+          "ALL"
+        ]
+      },
+      {
+        "id": "2.10",
+        "title": "Set Operations",
+        "subtopics": [
+          "UNION",
+          "UNION ALL",
+          "INTERSECT",
+          "EXCEPT / MINUS",
+          "UNION vs UNION ALL"
+        ]
+      },
+      {
+        "id": "2.11",
+        "title": "SQL Functions",
+        "subtopics": [
+          "String Functions",
+          "CONCAT",
+          "LENGTH",
+          "LOWER",
+          "UPPER",
+          "SUBSTRING",
+          "TRIM",
+          "REPLACE",
+          "Date Functions",
+          "CURRENT_DATE",
+          "NOW",
+          "DATE functions",
+          "Numeric Functions",
+          "ROUND",
+          "CEIL",
+          "FLOOR"
+        ]
+      },
+      {
+        "id": "2.12",
+        "title": "CASE Statements",
+        "subtopics": [
+          "CASE",
+          "Conditional logic in SQL",
+          "CASE with aggregation"
+        ]
+      },
+      {
+        "id": "2.13",
+        "title": "Window Functions",
+        "subtopics": [
+          "OVER()",
+          "PARTITION BY",
+          "ORDER BY inside window functions",
+          "ROW_NUMBER()",
+          "RANK()",
+          "DENSE_RANK()",
+          "NTILE()",
+          "LAG()",
+          "LEAD()",
+          "Running totals"
+        ]
+      },
+      {
+        "id": "2.14",
+        "title": "CTE",
+        "subtopics": [
+          "Common Table Expressions",
+          "WITH clause",
+          "Multiple CTEs",
+          "Recursive CTE"
+        ]
+      },
+      {
+        "id": "2.15",
+        "title": "Transactions in SQL",
+        "subtopics": [
+          "BEGIN",
+          "COMMIT",
+          "ROLLBACK",
+          "SAVEPOINT"
+        ]
+      },
+      {
+        "id": "2.16",
+        "title": "SQL Performance",
+        "subtopics": [
+          "Query optimization",
+          "Indexes",
+          "EXPLAIN / query plan concept",
+          "Avoiding unnecessary SELECT *",
+          "Index usage",
+          "N+1 query problem",
+          "Join performance"
+        ]
+      },
+      {
+        "id": "2.17",
+        "title": "SQL Practice Patterns",
+        "subtopics": [
+          "Make these actual revision topics too:",
+          "Second highest salary",
+          "Nth highest salary",
+          "Duplicate records",
+          "Delete duplicates",
+          "Find employees without managers",
+          "Employees earning more than managers",
+          "Top N per department",
+          "Consecutive values",
+          "Running total",
+          "Ranking",
+          "Department-wise highest salary",
+          "Customers with no orders",
+          "JOIN-based problems",
+          "GROUP BY problems",
+          "Window function problems"
+        ]
+      }
+    ]
+  },
+  "cn": {
+    "title": "COMPUTER NETWORKS",
+    "topics": [
+      {
+        "id": "3.1",
+        "title": "Network Fundamentals",
+        "subtopics": [
+          "What is a computer network?",
+          "Types of networks",
+          "LAN",
+          "MAN",
+          "WAN",
+          "PAN",
+          "Network topology",
+          "Bus",
+          "Star",
+          "Ring",
+          "Mesh",
+          "Bandwidth",
+          "Throughput",
+          "Latency",
+          "Jitter",
+          "Packet loss"
+        ]
+      },
+      {
+        "id": "3.2",
+        "title": "OSI Model",
+        "subtopics": [
+          "Learn every layer properly.",
+          "Physical Layer",
+          "Bits",
+          "Transmission media",
+          "Signals",
+          "Data Link Layer",
+          "Frames",
+          "MAC address",
+          "Error detection",
+          "Flow control",
+          "Switches",
+          "Network Layer",
+          "IP addressing",
+          "Routing",
+          "Routers",
+          "Transport Layer",
+          "TCP",
+          "UDP",
+          "Ports",
+          "Reliability",
+          "Session Layer",
+          "Session management",
+          "Presentation Layer",
+          "Encryption",
+          "Compression",
+          "Data translation",
+          "Application Layer",
+          "HTTP",
+          "DNS",
+          "SMTP",
+          "FTP",
+          "Data encapsulation",
+          "Decapsulation",
+          "Data units at every layer"
+        ]
+      },
+      {
+        "id": "3.3",
+        "title": "TCP/IP Model",
+        "subtopics": [
+          "Application",
+          "Transport",
+          "Internet",
+          "Network Access",
+          "OSI vs TCP/IP"
+        ]
+      },
+      {
+        "id": "3.4",
+        "title": "IP Addressing",
+        "subtopics": [
+          "IPv4",
+          "IPv6",
+          "Public IP",
+          "Private IP",
+          "Static IP",
+          "Dynamic IP",
+          "Loopback address",
+          "APIPA",
+          "Subnet mask",
+          "CIDR",
+          "Subnetting",
+          "Network address",
+          "Broadcast address"
+        ]
+      },
+      {
+        "id": "3.5",
+        "title": "MAC Address",
+        "subtopics": [
+          "What is a MAC address?",
+          "MAC vs IP address",
+          "ARP",
+          "ARP request",
+          "ARP response",
+          "ARP table"
+        ]
+      },
+      {
+        "id": "3.6",
+        "title": "DNS",
+        "subtopics": [
+          "What is DNS?",
+          "Domain name resolution",
+          "Recursive query",
+          "Iterative query",
+          "DNS resolver",
+          "Root server",
+          "TLD server",
+          "Authoritative name server",
+          "DNS caching",
+          "TTL",
+          "What happens when you type google.com into your browser?"
+        ]
+      },
+      {
+        "id": "3.7",
+        "title": "TCP",
+        "subtopics": [
+          "Connection-oriented protocol",
+          "Reliability",
+          "Sequence number",
+          "Acknowledgment",
+          "Flow control",
+          "Congestion control",
+          "TCP Three-Way Handshake",
+          "SYN",
+          "SYN-ACK",
+          "ACK",
+          "TCP Connection Termination",
+          "FIN",
+          "ACK",
+          "Why 3-way handshake?",
+          "Why not 2-way?",
+          "TIME_WAIT",
+          "TCP flow control",
+          "Sliding window",
+          "TCP congestion control"
+        ]
+      },
+      {
+        "id": "3.8",
+        "title": "UDP",
+        "subtopics": [
+          "Connectionless",
+          "No guarantee of delivery",
+          "Speed",
+          "Use cases",
+          "TCP vs UDP"
+        ]
+      },
+      {
+        "id": "3.9",
+        "title": "HTTP and HTTPS",
+        "subtopics": [
+          "HTTP",
+          "HTTPS",
+          "SSL",
+          "TLS",
+          "HTTP request",
+          "HTTP response",
+          "HTTP methods",
+          "GET",
+          "POST",
+          "PUT",
+          "PATCH",
+          "DELETE",
+          "HTTP status codes",
+          "200",
+          "201",
+          "400",
+          "401",
+          "403",
+          "404",
+          "500",
+          "HTTP vs HTTPS",
+          "HTTP/1.1 vs HTTP/2 basics"
+        ]
+      },
+      {
+        "id": "3.10",
+        "title": "Routing",
+        "subtopics": [
+          "Routing",
+          "Router",
+          "Routing table",
+          "Static routing",
+          "Dynamic routing",
+          "Distance vector",
+          "Link state",
+          "RIP",
+          "OSPF",
+          "BGP basics"
+        ]
+      },
+      {
+        "id": "3.11",
+        "title": "Switching",
+        "subtopics": [
+          "Switch",
+          "Hub",
+          "Router",
+          "Bridge",
+          "Gateway"
+        ]
+      },
+      {
+        "id": "3.12",
+        "title": "DHCP",
+        "subtopics": [
+          "What is DHCP?",
+          "Dynamic IP allocation",
+          "DORA process",
+          "Discover",
+          "Offer",
+          "Request",
+          "Acknowledge"
+        ]
+      },
+      {
+        "id": "3.13",
+        "title": "NAT",
+        "subtopics": [
+          "What is NAT?",
+          "Why NAT?",
+          "Private IP to public IP",
+          "PAT"
+        ]
+      },
+      {
+        "id": "3.14",
+        "title": "Network Security",
+        "subtopics": [
+          "Firewall",
+          "Proxy",
+          "VPN",
+          "SSL/TLS",
+          "HTTPS",
+          "Public key",
+          "Private key",
+          "Symmetric encryption",
+          "Asymmetric encryption"
+        ]
+      }
+    ]
+  },
+  "os": {
+    "title": "OPERATING SYSTEMS",
+    "topics": [
+      {
+        "id": "4.1",
+        "title": "OS Fundamentals",
+        "subtopics": [
+          "What is an operating system?",
+          "Responsibilities of OS",
+          "Kernel",
+          "Shell",
+          "User mode",
+          "Kernel mode",
+          "System calls"
+        ]
+      },
+      {
+        "id": "4.2",
+        "title": "Types of Operating Systems",
+        "subtopics": [
+          "Batch OS",
+          "Multiprogramming",
+          "Multitasking",
+          "Time-sharing",
+          "Distributed OS",
+          "Real-time OS",
+          "Network OS"
+        ]
+      },
+      {
+        "id": "4.3",
+        "title": "Processes",
+        "subtopics": [
+          "Program vs process",
+          "Process states",
+          "New",
+          "Ready",
+          "Running",
+          "Waiting",
+          "Terminated",
+          "Process Control Block",
+          "Context switching",
+          "Process scheduling"
+        ]
+      },
+      {
+        "id": "4.4",
+        "title": "Threads",
+        "subtopics": [
+          "What is a thread?",
+          "Process vs thread",
+          "User-level threads",
+          "Kernel-level threads",
+          "Multithreading",
+          "Benefits of threads"
+        ]
+      },
+      {
+        "id": "4.5",
+        "title": "CPU Scheduling",
+        "subtopics": [
+          "FCFS",
+          "SJF",
+          "SRTF",
+          "Round Robin",
+          "Priority Scheduling",
+          "Multilevel Queue",
+          "Multilevel Feedback Queue",
+          "Concepts:",
+          "Arrival time",
+          "Burst time",
+          "Completion time",
+          "Turnaround time",
+          "Waiting time",
+          "Response time",
+          "Preemptive vs non-preemptive",
+          "Starvation",
+          "Aging",
+          "Context switching"
+        ]
+      },
+      {
+        "id": "4.6",
+        "title": "Process Synchronization",
+        "subtopics": [
+          "One of the biggest interview topics.",
+          "Race condition",
+          "Critical section",
+          "Mutual exclusion",
+          "Synchronization",
+          "Synchronization Tools",
+          "Mutex",
+          "Semaphore",
+          "Binary semaphore",
+          "Counting semaphore",
+          "Monitor",
+          "Spinlock",
+          "Classic Problems",
+          "Producer-consumer",
+          "Readers-writers",
+          "Dining philosophers"
+        ]
+      },
+      {
+        "id": "4.7",
+        "title": "Deadlocks",
+        "subtopics": [
+          "Deadlock",
+          "Coffman conditions",
+          "Mutual exclusion",
+          "Hold and wait",
+          "No preemption",
+          "Circular wait",
+          "Prevention",
+          "Avoidance",
+          "Detection",
+          "Recovery",
+          "Banker's algorithm",
+          "Resource allocation graph"
+        ]
+      },
+      {
+        "id": "4.8",
+        "title": "Memory Management",
+        "subtopics": [
+          "Logical address",
+          "Physical address",
+          "Address binding",
+          "Dynamic loading",
+          "Dynamic linking",
+          "Swapping",
+          "Contiguous allocation"
+        ]
+      },
+      {
+        "id": "4.9",
+        "title": "Paging",
+        "subtopics": [
+          "Page",
+          "Frame",
+          "Page table",
+          "Address translation",
+          "TLB",
+          "Multi-level page table",
+          "Inverted page table",
+          "Why paging?",
+          "Internal fragmentation"
+        ]
+      },
+      {
+        "id": "4.10",
+        "title": "Segmentation",
+        "subtopics": [
+          "Segment",
+          "Segment table",
+          "Logical division",
+          "External fragmentation",
+          "Paging vs Segmentation"
+        ]
+      },
+      {
+        "id": "4.11",
+        "title": "Virtual Memory",
+        "subtopics": [
+          "Virtual memory",
+          "Demand paging",
+          "Page fault",
+          "Thrashing"
+        ]
+      },
+      {
+        "id": "4.12",
+        "title": "Page Replacement",
+        "subtopics": [
+          "FIFO",
+          "Optimal",
+          "LRU",
+          "Clock / Second chance",
+          "Belady's anomaly"
+        ]
+      },
+      {
+        "id": "4.13",
+        "title": "Fragmentation",
+        "subtopics": [
+          "Internal fragmentation",
+          "External fragmentation",
+          "Compaction"
+        ]
+      },
+      {
+        "id": "4.14",
+        "title": "File Systems",
+        "subtopics": [
+          "File",
+          "Directory",
+          "File allocation",
+          "Allocation methods",
+          "Contiguous allocation",
+          "Linked allocation",
+          "Indexed allocation",
+          "File permissions",
+          "Inode basics"
+        ]
+      },
+      {
+        "id": "4.15",
+        "title": "Disk Scheduling",
+        "subtopics": [
+          "FCFS",
+          "SSTF",
+          "SCAN",
+          "C-SCAN",
+          "LOOK",
+          "C-LOOK"
+        ]
+      },
+      {
+        "id": "4.16",
+        "title": "OS Architecture",
+        "subtopics": [
+          "Monolithic kernel",
+          "Microkernel",
+          "Hybrid kernel"
+        ]
+      }
+    ]
+  },
+  "oops": {
+    "title": "OOPS",
+    "topics": [
+      {
+        "id": "5.1",
+        "title": "Fundamentals",
+        "subtopics": [
+          "What is OOP?",
+          "Why OOP?",
+          "Class",
+          "Object",
+          "Attributes",
+          "Methods"
+        ]
+      },
+      {
+        "id": "5.2",
+        "title": "Four Pillars",
+        "subtopics": [
+          "Encapsulation",
+          "Data hiding",
+          "Access modifiers",
+          "Getters and setters",
+          "Abstraction",
+          "Abstract classes",
+          "Interfaces",
+          "Implementation hiding",
+          "Inheritance",
+          "Parent class",
+          "Child class",
+          "Types of inheritance",
+          "Polymorphism",
+          "Compile-time polymorphism",
+          "Runtime polymorphism",
+          "Method overloading",
+          "Method overriding"
+        ]
+      },
+      {
+        "id": "5.3",
+        "title": "Class Relationships",
+        "subtopics": [
+          "Association",
+          "Aggregation",
+          "Composition",
+          "Dependency",
+          "Especially:",
+          "Aggregation vs Composition."
+        ]
+      },
+      {
+        "id": "5.4",
+        "title": "Constructors",
+        "subtopics": [
+          "Default constructor",
+          "Parameterized constructor",
+          "Copy constructor",
+          "Constructor overloading"
+        ]
+      },
+      {
+        "id": "5.5",
+        "title": "Destructor",
+        "subtopics": [
+          "Destructor concept",
+          "Object lifecycle"
+        ]
+      },
+      {
+        "id": "5.6",
+        "title": "Access Modifiers",
+        "subtopics": [
+          "Public",
+          "Private",
+          "Protected",
+          "Default/package-private where applicable"
+        ]
+      },
+      {
+        "id": "5.7",
+        "title": "Static",
+        "subtopics": [
+          "Static variable",
+          "Static method",
+          "Static block",
+          "Static class concepts"
+        ]
+      },
+      {
+        "id": "5.8",
+        "title": "Important Keywords",
+        "subtopics": [
+          "Depending on your primary language, include:",
+          "this",
+          "super",
+          "final",
+          "const",
+          "static",
+          "virtual",
+          "override"
+        ]
+      },
+      {
+        "id": "5.9",
+        "title": "Interfaces vs Abstract Classes",
+        "subtopics": [
+          "Interface",
+          "Abstract class",
+          "When to use each",
+          "Multiple inheritance through interfaces"
+        ]
+      },
+      {
+        "id": "5.10",
+        "title": "Overloading vs Overriding",
+        "subtopics": []
+      },
+      {
+        "id": "5.11",
+        "title": "Object Relationships",
+        "subtopics": [
+          "IS-A relationship",
+          "HAS-A relationship"
+        ]
+      },
+      {
+        "id": "5.12",
+        "title": "SOLID Principles",
+        "subtopics": [
+          "Single Responsibility Principle",
+          "Open/Closed Principle",
+          "Liskov Substitution Principle",
+          "Interface Segregation Principle",
+          "Dependency Inversion Principle"
+        ]
+      },
+      {
+        "id": "5.13",
+        "title": "Object-Oriented Design Concepts",
+        "subtopics": [
+          "Coupling",
+          "Cohesion",
+          "Loose coupling",
+          "High cohesion",
+          "Dependency injection"
+        ]
+      },
+      {
+        "id": "5.14",
+        "title": "Design Patterns Basics",
+        "subtopics": [
+          "For fresher placements, don't go insanely deep, but know:",
+          "Creational",
+          "Singleton",
+          "Factory",
+          "Builder",
+          "Structural",
+          "Adapter",
+          "Decorator",
+          "Behavioral",
+          "Observer",
+          "Strategy"
+        ]
+      }
+    ]
+  },
+  "system-design": {
+    "title": "SYSTEM ARCHITECTURE AND DESIGN",
+    "topics": [
+      {
+        "id": "6.1",
+        "title": "System Design Fundamentals",
+        "subtopics": [
+          "What is system design?",
+          "Functional requirements",
+          "Non-functional requirements",
+          "Scalability",
+          "Availability",
+          "Reliability",
+          "Maintainability",
+          "Performance",
+          "Latency",
+          "Throughput"
+        ]
+      },
+      {
+        "id": "6.2",
+        "title": "Client-Server Architecture",
+        "subtopics": [
+          "Client",
+          "Server",
+          "API",
+          "Request-response architecture",
+          "Stateless vs stateful services"
+        ]
+      },
+      {
+        "id": "6.3",
+        "title": "Load Balancing",
+        "subtopics": [
+          "What is a load balancer?",
+          "Why load balancing?",
+          "Horizontal scaling",
+          "Vertical scaling",
+          "Round robin",
+          "Least connections",
+          "Health checks"
+        ]
+      },
+      {
+        "id": "6.4",
+        "title": "Scaling",
+        "subtopics": [
+          "Vertical scaling",
+          "Horizontal scaling",
+          "Stateless architecture",
+          "Stateful architecture",
+          "Auto scaling"
+        ]
+      },
+      {
+        "id": "6.5",
+        "title": "Caching",
+        "subtopics": [
+          "Why caching?",
+          "Cache hit",
+          "Cache miss",
+          "Cache-aside",
+          "Write-through",
+          "Write-back",
+          "TTL",
+          "Cache invalidation",
+          "Redis basics",
+          "CDN caching"
+        ]
+      },
+      {
+        "id": "6.6",
+        "title": "Databases",
+        "subtopics": [
+          "SQL vs NoSQL",
+          "Relational database",
+          "Document database",
+          "Key-value database",
+          "Graph database",
+          "Primary database",
+          "Read replicas",
+          "Replication",
+          "Sharding",
+          "Partitioning"
+        ]
+      },
+      {
+        "id": "6.7",
+        "title": "Database Scaling",
+        "subtopics": [
+          "Vertical scaling",
+          "Read replicas",
+          "Sharding",
+          "Horizontal partitioning",
+          "Vertical partitioning"
+        ]
+      },
+      {
+        "id": "6.8",
+        "title": "CAP Theorem",
+        "subtopics": [
+          "Consistency",
+          "Availability",
+          "Partition tolerance",
+          "Eventual consistency",
+          "Strong consistency"
+        ]
+      },
+      {
+        "id": "6.9",
+        "title": "API Design",
+        "subtopics": [
+          "REST",
+          "RESTful APIs",
+          "HTTP methods",
+          "Idempotency",
+          "Pagination",
+          "Versioning",
+          "Rate limiting",
+          "Authentication",
+          "Authorization"
+        ]
+      },
+      {
+        "id": "6.10",
+        "title": "Authentication and Authorization",
+        "subtopics": [
+          "Authentication vs authorization",
+          "Sessions",
+          "Cookies",
+          "JWT",
+          "Access token",
+          "Refresh token",
+          "OAuth basics"
+        ]
+      },
+      {
+        "id": "6.11",
+        "title": "Message Queues",
+        "subtopics": [
+          "Why message queues?",
+          "Asynchronous processing",
+          "Producer",
+          "Consumer",
+          "Queue",
+          "Pub/Sub",
+          "Examples conceptually:",
+          "RabbitMQ",
+          "Kafka",
+          "Message ordering",
+          "Delivery guarantees",
+          "Idempotency"
+        ]
+      },
+      {
+        "id": "6.12",
+        "title": "CDN",
+        "subtopics": [
+          "What is CDN?",
+          "Edge servers",
+          "Static content delivery",
+          "Latency reduction"
+        ]
+      },
+      {
+        "id": "6.13",
+        "title": "Rate Limiting",
+        "subtopics": [
+          "Why rate limiting?",
+          "Fixed window",
+          "Sliding window",
+          "Token bucket",
+          "Leaky bucket"
+        ]
+      },
+      {
+        "id": "6.14",
+        "title": "Monitoring",
+        "subtopics": [
+          "Logging",
+          "Metrics",
+          "Tracing",
+          "Observability",
+          "Alerts",
+          "Health checks"
+        ]
+      },
+      {
+        "id": "6.15",
+        "title": "System Design Concepts",
+        "subtopics": [
+          "Single point of failure",
+          "Redundancy",
+          "Fault tolerance",
+          "High availability",
+          "Disaster recovery",
+          "Backups"
+        ]
+      },
+      {
+        "id": "6.16",
+        "title": "Common System Design Problems",
+        "subtopics": [
+          "These can become revision topics later:",
+          "URL Shortener",
+          "Chat application",
+          "WhatsApp",
+          "Instagram",
+          "Twitter/X feed",
+          "YouTube",
+          "Netflix",
+          "Uber",
+          "Google Drive",
+          "Notification system",
+          "Rate limiter",
+          "Web crawler",
+          "File storage system",
+          "Requirements",
+          "APIs",
+          "Database",
+          "High-level architecture",
+          "Scaling",
+          "Caching",
+          "Load balancing",
+          "Bottlenecks"
+        ]
+      },
+      {
+        "id": "6.17",
+        "title": "Low-Level Design",
+        "subtopics": [
+          "Classes",
+          "Objects",
+          "Interfaces",
+          "Relationships",
+          "UML basics",
+          "Class diagrams",
+          "Sequence diagrams",
+          "Common LLD problems",
+          "Parking Lot",
+          "Elevator",
+          "Library Management System",
+          "Splitwise",
+          "Tic Tac Toe",
+          "Snake and Ladder",
+          "Vending Machine",
+          "ATM"
+        ]
+      }
+    ]
+  }
+}
