@@ -10,6 +10,7 @@ export default function Navbar() {
 
   const navItems = [
     { href: "/dashboard", label: "Dashboard" },
+    { href: "/revision", label: "Core Revision" },
     { href: "/settings", label: "Settings" },
   ];
 
