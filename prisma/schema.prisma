@@ -22,6 +22,10 @@ model User {
   sessions      Session[]
   opportunities Opportunity[]
 
+  dsaSettings      DsaSettings?
+  roadmapProgress  RoadmapProgress[]
+  patternProgress  PatternProgress[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -104,4 +108,45 @@ model OpportunityRole {
   roleName      String
 
   opportunity Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+}
+
+// ─── DSA Dashboard Models ───────────────────────────────────────
+
+model DsaSettings {
+  id                  String   @id @default(cuid())
+  userId              String   @unique
+  leetcodeUsername    String?
+  totalProblemsSolved Int      @default(0)
+  targetProblems      Int      @default(300)
+  codeforcesRating    Int      @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model RoadmapProgress {
+  id          String    @id @default(cuid())
+  userId      String
+  topicId     String
+  subtopicId  String
+  isCompleted Boolean   @default(false)
+  completedAt DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, topicId, subtopicId])
+}
+
+model PatternProgress {
+  id              String   @id @default(cuid())
+  userId          String
+  patternId       String
+  status          String   @default("Not Started")
+  optionalProgress Int?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, patternId])
 }
