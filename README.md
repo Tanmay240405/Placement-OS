@@ -49,7 +49,7 @@ This gives you the OAuth credentials and Gmail API access.
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
 2. Click **"Select a project"** → **"New Project"**
-3. Name it `Google Im Coming` (Google Cloud might not allow special characters, so use this or a similar name) → Click **Create**
+3. Name it `Placement OS` (Google Cloud might not allow special characters, so use this or a similar name) → Click **Create**
 4. Make sure the new project is selected
 
 #### Enable Gmail API
@@ -61,7 +61,7 @@ This gives you the OAuth credentials and Gmail API access.
 8. Go to **APIs & Services** → **OAuth consent screen**
 9. Select **External** → Click **Create**
 10. Fill in:
-    - App name: `Google I'm Coming`
+    - App name: `Placement OS`
     - User support email: your personal email
     - Developer contact email: your personal email
 11. Click **Save and Continue**
@@ -83,7 +83,7 @@ This gives you the OAuth credentials and Gmail API access.
 17. Go to **APIs & Services** → **Credentials**
 18. Click **+ Create Credentials** → **OAuth client ID**
 19. Application type: **Web application**
-20. Name: `Google Im Coming Web`
+20. Name: `Placement OS Web`
 21. Under **Authorized JavaScript origins**, add:
     ```
     http://localhost:3000
@@ -103,7 +103,7 @@ This gives you the PostgreSQL database.
 
 1. Go to [Supabase](https://supabase.com/) and sign in
 2. Click **New Project**
-3. Name it `google-im-coming`
+3. Name it `placement-os`
 4. Set a **database password** (save this somewhere!)
 5. Choose a region close to you
 6. Click **Create new project** (wait for it to finish)
@@ -137,7 +137,7 @@ To fetch your GitHub stats for the GitHub dashboard tab:
 
 ### Step 4: Configure Environment Variables
 
-1. In your project folder (`Google I'm Coming`), **copy** `.env.example` to `.env`:
+1. In your project folder (`Placement OS`), **copy** `.env.example` to `.env`:
 
    ```powershell
    Copy-Item .env.example .env

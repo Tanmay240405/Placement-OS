@@ -21,7 +21,7 @@ export const mockRecentActivity = [
     id: "2",
     dateGroup: "Yesterday",
     events: [
-      { id: "e3", description: "Created repository google-im-coming", repo: "google-im-coming", time: "Yesterday", icon: "📦" },
+      { id: "e3", description: "Created repository placement-os", repo: "placement-os", time: "Yesterday", icon: "📦" },
     ],
   },
   {

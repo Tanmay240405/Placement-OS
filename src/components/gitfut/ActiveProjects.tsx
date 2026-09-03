@@ -18,7 +18,7 @@ const defaultProjects: Project[] = [
     description: "Personal placement preparation dashboard",
     language: "TypeScript • Next.js",
     lastUpdated: "Today",
-    link: "https://github.com/Tanmay240405/google-im-coming",
+    link: "https://github.com/your-username/placement-os",
   }
 ];
 
