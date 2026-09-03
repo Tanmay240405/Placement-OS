@@ -12,7 +12,7 @@ export default function Navbar() {
     { href: "/dashboard", label: "Dashboard" },
     { href: "/dsa", label: "DSA" },
     { href: "/revision", label: "Core Revision" },
-    { href: "/gitfut", label: "GitFut" },
+    { href: "/gitfut", label: "GitHub" },
     { href: "/settings", label: "Settings" },
   ];
 

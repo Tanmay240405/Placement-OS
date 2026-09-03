@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
-import GitFutHero from "@/components/gitfut/GitFutHero";
 import QuickStats from "@/components/gitfut/QuickStats";
 import ContributionHeatmap from "@/components/gitfut/ContributionHeatmap";
 import ConsistencyStats from "@/components/gitfut/ConsistencyStats";
@@ -21,10 +20,6 @@ export default async function GitFutDashboard() {
 
       <main className="page-container animate-fade-in stagger-children" style={{ flex: 1, width: "100%" }}>
         
-        {/* HERO */}
-        <section style={{ marginBottom: "2rem" }}>
-          <GitFutHero />
-        </section>
 
         {/* QUICK STATS */}
         <section style={{ marginBottom: "2rem" }}>
