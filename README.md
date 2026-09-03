@@ -214,7 +214,4 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 ---
 
 ## 🤝 Contributing
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/placement-os/issues).
-
-## 📄 License
-This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
+Contributions, issues, and feature requests are welcome!
