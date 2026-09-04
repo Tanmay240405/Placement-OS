@@ -79,11 +79,6 @@ export function parseSupersetJobEmail(
       receivedAt: email.receivedAt,
     };
 
-    // DEBUG LOGGING
-    if (email.subject.includes("Eaton")) {
-      const fs = require('fs');
-      fs.appendFileSync('debug.txt', `\n\n--- PARSING EATON INDIA ---\nCLEAN TEXT:\n${cleanText}\n\nDEADLINE RAW: ${deadline.raw}\nDEADLINE DATETIME: ${deadline.datetime}\n`);
-    }
 
     return result;
   } catch (error) {
