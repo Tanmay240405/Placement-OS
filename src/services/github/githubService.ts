@@ -1,5 +1,5 @@
 const GITHUB_PAT = process.env.GITHUB_PAT;
-const USERNAME = "Tanmay240405";
+const USERNAME = process.env.GITHUB_USERNAME || process.env.NEXT_PUBLIC_GITHUB_USERNAME || "";
 
 async function fetchGraphQL(query: string, variables: any = {}) {
   if (!GITHUB_PAT) {
@@ -30,6 +30,10 @@ async function fetchGraphQL(query: string, variables: any = {}) {
 }
 
 export async function getGithubData() {
+  if (!USERNAME) {
+    console.warn("GITHUB_USERNAME is not set in environment variables");
+    return null;
+  }
   const query = `
     query($userName:String!) {
       user(login: $userName){
@@ -84,7 +88,7 @@ export async function getGithubData() {
 }
 
 export async function fetchGithubRecentActivity() {
-  if (!GITHUB_PAT) return [];
+  if (!GITHUB_PAT || !USERNAME) return [];
   
   // Use authenticated endpoint (not /public) to include private repo activity
   const res = await fetch(`https://api.github.com/users/${USERNAME}/events?per_page=50`, {

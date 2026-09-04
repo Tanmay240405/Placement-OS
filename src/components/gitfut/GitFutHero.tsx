@@ -16,7 +16,7 @@ export default function GitFutHero() {
       }}
     >
       <Image
-        src="/Tanmay240405-gitfut.png"
+        src="/-gitfut.png"
         alt="GitFut Score Card"
         width={80}
         height={40}
