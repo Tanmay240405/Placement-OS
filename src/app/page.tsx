@@ -30,8 +30,8 @@ export default function LandingPage() {
   return (
     <>
       <div className="landing-bg" />
-      <div className="landing-hero">
-        <div className="animate-slide-up">
+      <div className="landing-hero relative overflow-hidden w-full">
+        <div className="animate-slide-up flex flex-col items-center relative z-10 w-full max-w-2xl mx-auto">
           {/* Logo Mark */}
           <div
             style={{
@@ -95,67 +95,70 @@ export default function LandingPage() {
             We only read your Superset notification emails. Your data stays
             private and secure.
           </p>
+
+          {/* Bottom Cloud */}
+          <div className="mt-44 w-full max-w-[320px]">
+            <div className="cloud-shape animate-cloud-pulse w-full">
+              <div style={{ marginBottom: "0.75rem", color: "var(--text-primary)" }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <div style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text-primary)" }}>Revision</div>
+              <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: "1.4" }}>Never forget what you've learned</div>
+            </div>
+          </div>
+
+          {/* Mobile clouds (Left and right become visible on mobile below the bottom one) */}
+          <div className="flex xl:hidden flex-col gap-8 w-full max-w-[320px] mt-8">
+            <div className="cloud-shape animate-cloud-pulse w-full">
+              <div style={{ marginBottom: "0.75rem", color: "var(--text-primary)" }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <div style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text-primary)" }}>GitHub</div>
+              <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: "1.4" }}>Track open source contributions & commits</div>
+            </div>
+            <div className="cloud-shape animate-cloud-pulse w-full">
+              <div style={{ marginBottom: "0.75rem", color: "var(--text-primary)" }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path>
+                  <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path>
+                </svg>
+              </div>
+              <div style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text-primary)" }}>DSA</div>
+              <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: "1.4" }}>Monitor Leetcode & Codeforces progress</div>
+            </div>
+          </div>
         </div>
 
-        {/* Features Preview */}
-        <div
-          className="animate-fade-in"
-          style={{
-            marginTop: "4rem",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "1.5rem",
-            maxWidth: "700px",
-            width: "100%",
-          }}
-        >
-          {[
-            {
-              icon: "📧",
-              title: "Auto-Detect",
-              desc: "Fetches job emails from Superset",
-            },
-            {
-              icon: "📊",
-              title: "Smart Parse",
-              desc: "Extracts company, roles & deadlines",
-            },
-            {
-              icon: "🎯",
-              title: "Track Status",
-              desc: "Mark as registered with one click",
-            },
-          ].map((feature) => (
-            <div
-              key={feature.title}
-              className="glass-card"
-              style={{
-                padding: "1.25rem",
-                textAlign: "center",
-              }}
-            >
-              <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>
-                {feature.icon}
-              </div>
-              <div
-                style={{
-                  fontSize: "0.875rem",
-                  fontWeight: 600,
-                  marginBottom: "0.25rem",
-                }}
-              >
-                {feature.title}
-              </div>
-              <div
-                style={{
-                  fontSize: "0.75rem",
-                  color: "var(--text-muted)",
-                }}
-              >
-                {feature.desc}
-              </div>
+        {/* Left Cloud - Absolute (Desktop) */}
+        <div className="hidden xl:block absolute left-[2%] 2xl:left-[10%] top-[25%] z-0">
+          <div className="cloud-shape animate-cloud-pulse w-full max-w-[280px]">
+            <div style={{ marginBottom: "0.75rem", color: "var(--text-primary)" }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
             </div>
-          ))}
+            <div style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text-primary)" }}>GitHub</div>
+            <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: "1.4" }}>Track open source contributions & commits</div>
+          </div>
+        </div>
+
+        {/* Right Cloud - Absolute (Desktop) */}
+        <div className="hidden xl:block absolute right-[2%] 2xl:right-[10%] top-[25%] z-0" style={{ animationDelay: "1s" }}>
+          <div className="cloud-shape animate-cloud-pulse w-full max-w-[280px]">
+            <div style={{ marginBottom: "0.75rem", color: "var(--text-primary)" }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path>
+                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path>
+              </svg>
+            </div>
+            <div style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--text-primary)" }}>DSA</div>
+            <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: "1.4" }}>Monitor Leetcode & Codeforces progress</div>
+          </div>
         </div>
       </div>
     </>

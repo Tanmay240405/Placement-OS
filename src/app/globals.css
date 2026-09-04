@@ -448,6 +448,49 @@ body {
   animation: spin 1s steps(8, end) infinite; /* Retro blocky spin */
 }
 
+@keyframes cloud-pulse {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.02) translateY(-4px);
+  }
+}
+
+.animate-cloud-pulse {
+  animation: cloud-pulse 3s ease-in-out infinite;
+}
+
+.cloud-shape {
+  background: var(--bg-card);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  box-shadow: var(--shadow-card);
+  transition: all 0.5s ease;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cloud-shape:nth-child(even) {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation-delay: 1s;
+}
+
+.cloud-shape:nth-child(3n) {
+  border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
+  animation-delay: 2s;
+}
+
+.cloud-shape:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  background: var(--bg-card-hover);
+}
+
 /* Stagger children animations */
 .stagger-children > * {
   opacity: 0;
